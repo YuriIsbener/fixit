@@ -3,28 +3,28 @@ CREATE DATABASE fixit_db;
 USE fixit_db;
 
 CREATE TABLE tipoUser(
-idTipoUser INT PRIMARY KEY, 
+PRIMARY KEY(idTipoUser), 
 nomeTipoUser VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE setor(
-idSetor INT PRIMARY KEY, 
+PRIMARY KEY(idSetor), 
 nomeSetor VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE material(
-idMaterial INT PRIMARY KEY, 
+PRIMARY KEY(idMaterial), 
 nomeMaterial VARCHAR(40) NOT NULL, 
 quantMaterial INT NOT NULL
 );
 
 CREATE TABLE statusChamada(
-idStatusChamada INT PRIMARY KEY, 
+PRIMARY KEY(idStatusChamada), 
 nomeStatusChamada VARCHAR(40) NOT NULL
 );
 
 CREATE TABLE usuario(
-idUsuario INT PRIMARY KEY,
+PRIMARY KEY(idUsuario),
 FOREIGN KEY(idTipoUser) REFERENCES tipoUser(idTipoUser),
 FOREIGN KEY(idSetor) REFERENCES setor(idSetor),
 nome VARCHAR(50) NOT NULL,
@@ -33,7 +33,7 @@ senha VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE chamada(
-idChamada INT PRIMARY KEY,
+PRIMARY KEY(idChamada),
 FOREIGN KEY(UserCaller_id) REFERENCES usuario(idUsuario),
 FOREIGN KEY(UserRespond_id) REFERENCES usuario(idUsuario),
 FOREIGN KEY(statusChamada_id) REFERENCES statusChamada(idStatusChamada),
