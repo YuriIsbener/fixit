@@ -1384,19 +1384,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DEV\\.nuget\\packages\\": {}
+    "C:\\Users\\46976480803\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DEV\\Desktop\\fixit\\fixit-API\\fixit-API.csproj",
+      "projectUniqueName": "C:\\Users\\46976480803\\Documents\\GitHub\\fixit\\fixit-API\\fixit-API.csproj",
       "projectName": "fixit-API",
-      "projectPath": "C:\\Users\\DEV\\Desktop\\fixit\\fixit-API\\fixit-API.csproj",
-      "packagesPath": "C:\\Users\\DEV\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DEV\\Desktop\\fixit\\fixit-API\\obj\\",
+      "projectPath": "C:\\Users\\46976480803\\Documents\\GitHub\\fixit\\fixit-API\\fixit-API.csproj",
+      "packagesPath": "C:\\Users\\46976480803\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\46976480803\\Documents\\GitHub\\fixit\\fixit-API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\DEV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\46976480803\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
