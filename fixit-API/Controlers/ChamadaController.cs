@@ -50,11 +50,11 @@ namespace fixit_API.Controlers
         }
 
         [HttpPost]
-        public IActionResult Post(Chamada novoChamada)
+        public IActionResult Post(Chamada novaChamada)
         {
             try
             {
-                _chamadaRepository.Cadastrar(novoChamada);
+                _chamadaRepository.Cadastrar(novaChamada);
 
                 return StatusCode(201);
             }
@@ -70,6 +70,21 @@ namespace fixit_API.Controlers
             try
             {
                 _chamadaRepository.Atualizar(id, chamadaAtualizada);
+
+                return StatusCode(204);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _chamadaRepository.Deletar(id);
 
                 return StatusCode(204);
             }

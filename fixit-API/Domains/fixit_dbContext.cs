@@ -20,7 +20,7 @@ namespace fixit_API.Domains
         public virtual DbSet<Chamada> Chamada { get; set; }
         public virtual DbSet<Chamater> Chamaters { get; set; }
         public virtual DbSet<Colaborador> Colaboradors { get; set; }
-        public virtual DbSet<Material> Materials { get; set; }
+        public virtual DbSet<Material> Material { get; set; }
         public virtual DbSet<Prestador> Prestadors { get; set; }
         public virtual DbSet<Setor> Setors { get; set; }
         public virtual DbSet<Statuschamadum> Statuschamada { get; set; }

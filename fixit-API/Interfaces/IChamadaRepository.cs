@@ -9,34 +9,34 @@ namespace fixit_API.Interfaces
     interface IChamadaRepository
     {
         /// <summary>
-        /// Lista todos os tipos de eventos
+        /// Lista todas as chamadas
         /// </summary>
-        /// <returns>Uma lista de tipos de eventos</returns>
+        /// <returns>Uma lista de chamadas</returns>
         List<Chamada> Listar();
 
         /// <summary>
-        /// Busca um tipo de evento através do ID
+        /// Busca uma chamada através do ID
         /// </summary>
-        /// <param name="id">ID do tipo de evento que será buscado</param>
-        /// <returns>Um tipo de evento buscado</returns>
+        /// <param name="id">ID da chamada que será buscado</param>
+        /// <returns>A chamada buscada</returns>
         Chamada BuscarPorId(int id);
 
         /// <summary>
-        /// Cadastra um novo tipo de evento
+        /// Cadastra uma nova chamada
         /// </summary>
-        /// <param name="novoTipoEvento">Objeto novoTipoEvento que será cadastrado</param>
-        void Cadastrar(Chamada novoChamada);
+        /// <param name="novaChamada">Objeto novoChamada que será cadastrado</param>
+        void Cadastrar(Chamada novaChamada);
 
         /// <summary>
-        /// Atualiza um tipo de evento existente
+        /// Atualiza uma chamada existente
         /// </summary>
-        /// <param name="tipoEventoAtualizado">Objeto com as novas informações</param>
-        void Atualizar(int id, Chamada ChamadaAtualizado);
+        /// <param name="ChamadaAtualizada">Objeto com as novas informações</param>
+        void Atualizar(int id, Chamada ChamadaAtualizada);
 
         /// <summary>
-        /// Deleta um tipo de evento existente
+        /// Deleta uma chamada existente
         /// </summary>
-        /// <param name="id">ID do tipo de evento que será deletado</param>
+        /// <param name="id">ID da chamada que será deletado</param>
         void Deletar(int id);
     }
 }
