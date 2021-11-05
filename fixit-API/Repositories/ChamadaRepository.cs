@@ -17,33 +17,33 @@ namespace fixit_API.Repositories
             {
                 chamadaBuscada.NomeChamado = chamadaAtualizada.NomeChamado;
             }
-            ctx.Chamada.Update(chamadaBuscada);
+            ctx.Chamadas.Update(chamadaBuscada);
 
             ctx.SaveChanges();
         }
 
         public Chamada BuscarPorId(int id)
         {
-            return ctx.Chamada.FirstOrDefault(c => c.IdChamada == id);
+            return ctx.Chamadas.FirstOrDefault(c => c.IdChamada == id);
         }
 
         public void Cadastrar(Chamada novoChamada)
         {
-            ctx.Chamada.Add(novoChamada);
+            ctx.Chamadas.Add(novoChamada);
 
             ctx.SaveChanges();
         }
 
         public void Deletar(int id)
         {
-            ctx.Chamada.Remove(BuscarPorId(id));
+            ctx.Chamadas.Remove(BuscarPorId(id));
 
             ctx.SaveChanges();
         }
 
         public List<Chamada> Listar()
         {
-            return ctx.Chamada.ToList();
+            return ctx.Chamadas.ToList();
         }
 
         fixit_dbContext ctx = new fixit_dbContext();

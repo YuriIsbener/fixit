@@ -17,13 +17,13 @@ namespace fixit_API.Domains
         {
         }
 
-        public virtual DbSet<Chamada> Chamada { get; set; }
+        public virtual DbSet<Chamada> Chamadas { get; set; }
         public virtual DbSet<Chamater> Chamaters { get; set; }
-        public virtual DbSet<Colaborador> Colaboradors { get; set; }
-        public virtual DbSet<Material> Material { get; set; }
-        public virtual DbSet<Prestador> Prestadors { get; set; }
-        public virtual DbSet<Setor> Setors { get; set; }
-        public virtual DbSet<Statuschamadum> Statuschamada { get; set; }
+        public virtual DbSet<Colaborador> Colaboradores { get; set; }
+        public virtual DbSet<Material> Materiais { get; set; }
+        public virtual DbSet<Prestador> Prestadores { get; set; }
+        public virtual DbSet<Setor> Setores { get; set; }
+        public virtual DbSet<Statuschamada> Statuschamadas { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -193,7 +193,7 @@ namespace fixit_API.Domains
                     .HasColumnName("nomeSetor");
             });
 
-            modelBuilder.Entity<Statuschamadum>(entity =>
+            modelBuilder.Entity<Statuschamada>(entity =>
             {
                 entity.HasKey(e => e.IdStatusChamada)
                     .HasName("PRIMARY");

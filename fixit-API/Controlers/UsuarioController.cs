@@ -9,18 +9,19 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace fixit_API.Controlers
-{
+{ 
+
     [Produces("application/json")]
 
     [Route("api/[controller]")]
     [ApiController]
-    public class MaterialController : ControllerBase
+    public class UsuarioController : ControllerBase
     {
-        private IMaterialRepository _materialRepository { get; set; }
+        private IUsuarioRepository _usuarioRepository { get; set; }
 
-            public MaterialController()
+            public UsuarioController()
             {
-                _materialRepository = new MaterialRepository();
+                _usuarioRepository = new UsuarioRepository();
             }
 
             [HttpGet]
@@ -28,7 +29,7 @@ namespace fixit_API.Controlers
             {
                 try
                 {
-                    return Ok(_materialRepository.Listar());
+                    return Ok(_usuarioRepository.Listar());
                 }
                 catch (Exception ex)
                 {
@@ -41,7 +42,7 @@ namespace fixit_API.Controlers
             {
                 try
                 {
-                    return Ok(_materialRepository.BuscarPorId(id));
+                    return Ok(_usuarioRepository.BuscarPorId(id));
                 }
                 catch (Exception ex)
                 {
@@ -50,11 +51,11 @@ namespace fixit_API.Controlers
             }
 
             [HttpPost]
-            public IActionResult Post(Material novoMaterial)
+            public IActionResult Post(Usuario novoUsuario)
             {
                 try
                 {
-                    _materialRepository.Cadastrar(novoMaterial);
+                    _usuarioRepository.Cadastrar(novoUsuario);
 
                     return StatusCode(201);
                 }
@@ -65,11 +66,11 @@ namespace fixit_API.Controlers
             }
 
             [HttpPut("{id}")]
-            public IActionResult Put(int id, Material materialAtualizado)
+            public IActionResult Put(int id, Usuario usuarioAtualizado)
             {
                 try
                 {
-                    _materialRepository.Atualizar(id, materialAtualizado);
+                    _usuarioRepository.Atualizar(id, usuarioAtualizado);
 
                     return StatusCode(204);
                 }
@@ -84,7 +85,7 @@ namespace fixit_API.Controlers
             {
                 try
                 {
-                    _materialRepository.Deletar(id);
+                    _usuarioRepository.Deletar(id);
 
                     return StatusCode(204);
                 }
@@ -93,5 +94,5 @@ namespace fixit_API.Controlers
                     return BadRequest(ex);
                 }
             }
-        }
+    }
 }

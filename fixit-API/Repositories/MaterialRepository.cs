@@ -17,33 +17,33 @@ namespace fixit_API.Repositories
             {
                 materialBuscado.NomeMaterial = materialAtualizado.NomeMaterial;
             }
-            ctx.Material.Update(materialBuscado);
+            ctx.Materiais.Update(materialBuscado);
 
             ctx.SaveChanges();
         }
 
         public Material BuscarPorId(int id)
         {
-            return ctx.Material.FirstOrDefault(c => c.IdMaterial == id);
+            return ctx.Materiais.FirstOrDefault(c => c.IdMaterial == id);
         }
 
         public void Cadastrar(Material novoMaterial)
         {
-            ctx.Material.Add(novoMaterial);
+            ctx.Materiais.Add(novoMaterial);
 
             ctx.SaveChanges();
         }
 
         public void Deletar(int id)
         {
-            ctx.Material.Remove(BuscarPorId(id));
+            ctx.Materiais.Remove(BuscarPorId(id));
 
             ctx.SaveChanges();
         }
 
         public List<Material> Listar()
         {
-            return ctx.Material.ToList();
+            return ctx.Materiais.ToList();
         }
 
         fixit_dbContext ctx = new fixit_dbContext();

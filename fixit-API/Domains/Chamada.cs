@@ -16,7 +16,7 @@ namespace fixit_API.Domains
 
         public virtual Colaborador ColaboradorFkNavigation { get; set; }
         public virtual Prestador PrestadorFkNavigation { get; set; }
-        public virtual Statuschamadum StatusChamadaFkNavigation { get; set; }
+        public virtual Statuschamada StatusChamadaFkNavigation { get; set; }
 
         public Chamada()
         {

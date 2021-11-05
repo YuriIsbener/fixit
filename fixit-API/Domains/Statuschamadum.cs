@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace fixit_API.Domains
 {
-    public partial class Statuschamadum
+    public partial class Statuschamada
     {
-        public Statuschamadum()
+        public Statuschamada()
         {
             Chamada = new HashSet<Chamada>();
         }

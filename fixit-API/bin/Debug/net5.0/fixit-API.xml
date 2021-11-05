@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>fixit-API</name>
+    </assembly>
+    <members>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.Listar">
+            <summary>
+            Lista todas as chamadas
+            </summary>
+            <returns>Uma lista de chamadas</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma chamada através do ID
+            </summary>
+            <param name="id">ID da chamada que será buscado</param>
+            <returns>A chamada buscada</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.Cadastrar(fixit_API.Domains.Chamada)">
+            <summary>
+            Cadastra uma nova chamada
+            </summary>
+            <param name="novaChamada">Objeto novoChamada que será cadastrado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.Atualizar(System.Int32,fixit_API.Domains.Chamada)">
+            <summary>
+            Atualiza uma chamada existente
+            </summary>
+            <param name="ChamadaAtualizada">Objeto com as novas informações</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma chamada existente
+            </summary>
+            <param name="id">ID da chamada que será deletado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.Listar">
+            <summary>
+            Lista todas os Materiais
+            </summary>
+            <returns>Uma lista de Materiais</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um Material através do ID
+            </summary>
+            <param name="id">ID do Material que será buscado</param>
+            <returns>O material buscada</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.Cadastrar(fixit_API.Domains.Material)">
+            <summary>
+            Cadastra um novo Material
+            </summary>
+            <param name="novoMaterial">Objeto novoChamada que será cadastrado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.Atualizar(System.Int32,fixit_API.Domains.Material)">
+            <summary>
+            Atualiza um Material existente
+            </summary>
+            <param name="materialAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um material existente
+            </summary>
+            <param name="id">ID da chamada que será deletado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.Listar">
+            <summary>
+            Lista todas os Materiais
+            </summary>
+            <returns>Uma lista de Materiais</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um Material através do ID
+            </summary>
+            <param name="id">ID do Material que será buscado</param>
+            <returns>O material buscada</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.Cadastrar(fixit_API.Domains.Usuario)">
+            <summary>
+            Cadastra um novo Material
+            </summary>
+            <param name="novoUsuario">Objeto novoChamada que será cadastrado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.Atualizar(System.Int32,fixit_API.Domains.Usuario)">
+            <summary>
+            Atualiza um Material existente
+            </summary>
+            <param name="usuarioAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um material existente
+            </summary>
+            <param name="id">ID da chamada que será deletado</param>
+        </member>
+    </members>
+</doc>
