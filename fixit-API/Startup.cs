@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using System;
@@ -44,6 +45,41 @@ namespace fixit_API
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 c.IncludeXmlComments(xmlPath);
             });
+            services
+              // Define a forma de autenticação
+              .AddAuthentication(options =>
+              {
+                  options.DefaultAuthenticateScheme = "JwtBearer";
+                  options.DefaultChallengeScheme = "JwtBearer";
+              })
+
+              // Define os parâmetros de validação do token
+              .AddJwtBearer("JwtBearer", options =>
+              {
+                  options.TokenValidationParameters = new TokenValidationParameters
+                  {
+                      // Quem está solicitando
+                      ValidateIssuer = true,
+
+                      // Quem está validando
+                      ValidateAudience = true,
+
+                      // Definindo se tempo de expiração será validado
+                      ValidateLifetime = true,
+
+                      // Forma de criptografia
+                      IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Fix.It-chave-autenticacao")),
+
+                      // Tempo de expiração do token
+                      ClockSkew = TimeSpan.FromMinutes(30),
+
+                      // Nome da issuer, de onde está vindo
+                      ValidIssuer = "FixIt.Api",
+
+                      // Nome da audience, de onde está vindo
+                      ValidAudience = "FixIt.Api"
+                  };
+              });
         }
     
 
@@ -63,6 +99,10 @@ namespace fixit_API
             });
 
             app.UseRouting();
+
+            app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

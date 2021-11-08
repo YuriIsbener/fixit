@@ -4,6 +4,7 @@ using fixit_API.Repositories;
 using fixit_API.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -61,25 +62,58 @@ namespace fixit_API.Controlers
                     // Retorna NotFound com uma mensagem de erro
                     return NotFound("E-mail ou senha inválidos!");
                 }
-                // Define os dados que serão fornecidos no token - Payload
+
+                string interprete = "";
+                if (usuarioBuscado.TipoUser == true)
+                {
+                    interprete = "Administrador";
+                }
+                else
+                {
+                    interprete = "Comum";
+                }
+
+
                 var claims = new[]
                 {
-                // Armazena na Claim o e-mail do usuário autenticado
-                new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
+                   // Armazena na Claim o e-mail do usuário autenticado
+                   new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
 
-                    // Armazena na Claim o ID do usuário autenticado
-                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
+                   // Armazena na Claim o ID do usuário autenticado
+                   new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
 
                     // Armazena na Claim o tipo de usuário que foi autenticado (Administrador ou Comum)
-                    new Claim(ClaimTypes.Role, usuarioBuscado.TipoUser.ToString())
+                    new Claim(ClaimTypes.Role, interprete)
                 };
 
-                }
+                // Define a chave de acesso ao token
+                var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Fix.It-chave-autenticacao"));
+
+                // Define as credenciais do token - Header
+                var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+                // Gera o token
+                var dadostoken = new JwtSecurityToken(
+                    issuer: "FixIt.Api",                 // emissor do token
+                    audience: "FixIt.Api",               // destinatário do token
+                    claims: claims,                        // dados definidos acima
+                    expires: DateTime.Now.AddMinutes(30),  // tempo de expiração
+                    signingCredentials: creds              // credenciais do token
+                );
+
+                // Retorna Ok com o token
+                return Ok(new
+                {
+                    token = new JwtSecurityTokenHandler().WriteToken(dadostoken)
+                });
+
                 // Caso o usuário seja encontrado, prossegue para a criação do token
+            }
             catch (Exception ex)
             {
                 return BadRequest(ex);
             }
+
         }
     }
 }
