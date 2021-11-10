@@ -63,17 +63,6 @@ namespace fixit_API.Controlers
                     return NotFound("E-mail ou senha inválidos!");
                 }
 
-                string interprete = "";
-                if (usuarioBuscado.TipoUser == true)
-                {
-                    interprete = "Administrador";
-                }
-                else
-                {
-                    interprete = "Comum";
-                }
-
-
                 var claims = new[]
                 {
                    // Armazena na Claim o e-mail do usuário autenticado
@@ -83,7 +72,7 @@ namespace fixit_API.Controlers
                    new Claim(JwtRegisteredClaimNames.Jti, usuarioBuscado.IdUsuario.ToString()),
 
                     // Armazena na Claim o tipo de usuário que foi autenticado (Administrador ou Comum)
-                    new Claim(ClaimTypes.Role, interprete)
+                    new Claim(ClaimTypes.Role, usuarioBuscado.TipoUser.ToString())
                 };
 
                 // Define a chave de acesso ao token
