@@ -46,6 +46,7 @@ namespace fixit_API.Repositories
         {
             return ctx.Chamadas.ToList();
         }
+
         fixit_dbContext ctx = new fixit_dbContext();
     }
 }

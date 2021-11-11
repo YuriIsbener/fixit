@@ -18,6 +18,8 @@ INSERT INTO usuario(idUsuario, nome, tipoUser, email, senha)
 VALUES
 (1,"Admin", true, "ADM@gmail.com", "dev@132");
 
-INSERT INTO colaborador(idColaborador, usuario_fk, setorColab_fk) 
-VALUES
-(1, 1, 4);
+INSERT INTO colaborador(usuario_fk, setorColab_fk)
+VALUES(1, 4)
+
+ 
+

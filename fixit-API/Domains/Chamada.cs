@@ -8,7 +8,7 @@ namespace fixit_API.Domains
 {
     public partial class Chamada
     {
-
+        
         public int PrestadorFk { get; set; }
         public int ColaboradorFk { get; set; }
         public int StatusChamadaFk { get; set; }

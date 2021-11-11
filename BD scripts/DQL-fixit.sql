@@ -7,3 +7,4 @@ SELECT  colaborador.setorColab_fk,
 	FROM colaborador
 INNER JOIN usuario ON colaborador.usuario_fk = usuario.idUsuario
 INNER JOIN setor ON colaborador.setorColab_fk = setor.idSetor
+
