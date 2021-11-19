@@ -31,6 +31,7 @@ namespace fixit_API.Interfaces
         /// <summary>
         /// Atualiza um Material existente
         /// </summary>
+        /// <param name="id"></param>
         /// <param name="usuarioAtualizado">Objeto com as novas informações</param>
         void Atualizar(int id, Usuario usuarioAtualizado);
 
