@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -94,5 +95,26 @@ namespace fixit_API.Controlers
             }
         }
 
+        [HttpGet("minhas")]
+        public IActionResult GetMy()
+        {
+            try
+            {
+                // Cria uma variável idUsuario que recebe o valor do ID do usuário que está logado
+                int idUsuario = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                // Retora a resposta da requisição 200 - OK fazendo a chamada para o método e trazendo a lista
+                return Ok(_chamadaRepository.ListarMinhas(idUsuario));
+            }
+            catch (Exception error)
+            {
+                // Retorna a resposta da requisição 400 - Bad Request e o erro ocorrido
+                return BadRequest(new
+                {
+                    mensagem = "Não é possível mostrar as presenças se o usuário não estiver logado!",
+                    error
+                });
+            }
+        }
     }
 }

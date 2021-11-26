@@ -16,8 +16,8 @@ namespace fixit_API.Domains
         public int UsuarioFk { get; set; }
         public int SetorPrestFk { get; set; }
 
+        public virtual ICollection<Chamada> Chamada { get; set; }
         public virtual Setor SetorPrestFkNavigation { get; set; }
         public virtual Usuario UsuarioFkNavigation { get; set; }
-        public virtual ICollection<Chamada> Chamada { get; set; }
     }
 }

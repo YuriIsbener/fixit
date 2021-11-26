@@ -47,6 +47,15 @@ namespace fixit_API.Repositories
             return ctx.Chamadas.ToList();
         }
 
+        public List<Chamada> ListarMinhas(int id)
+        {
+            return ctx.Chamadas
+           .Include(c => c.PrestadorFkNavigation).ThenInclude(c => c.UsuarioFk)
+           .Include(c => c.ColaboradorFkNavigation).ThenInclude(c => c.UsuarioFk)
+           .Where(p => p.ColaboradorFkNavigation.UsuarioFk == id && p.PrestadorFkNavigation.UsuarioFk)
+           .ToList();
+        }
+
         fixit_dbContext ctx = new fixit_dbContext();
     }
 }

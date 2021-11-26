@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace fixit_API.Controlers
@@ -18,10 +19,10 @@ namespace fixit_API.Controlers
     {
         private IMaterialRepository _materialRepository { get; set; }
 
-            public MaterialController()
-            {
-                _materialRepository = new MaterialRepository();
-            }
+        public MaterialController()
+        {
+            _materialRepository = new MaterialRepository();
+        }
 
             [HttpGet]
             public IActionResult GET()
@@ -92,6 +93,6 @@ namespace fixit_API.Controlers
                 {
                     return BadRequest(ex);
                 }
-            }
+        }
         }
 }

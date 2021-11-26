@@ -14,6 +14,8 @@ namespace fixit_API.Interfaces
         /// <returns>Uma lista de chamadas</returns>
         List<Chamada> Listar();
 
+        List<Chamada> ListarMinhas(int id);
+
         /// <summary>
         /// Busca uma chamada através do ID
         /// </summary>
