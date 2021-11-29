@@ -1,5 +1,4 @@
-https://www.c-sharpcorner.com/article/how-to-export-data-in-excel-pdf-csv-word-json-xml-and-text-file/
-https://firebase.google.com/?hl=pt-br
-https://www.youtube.com/watch?v=gIC7AajG5aE
-https://aws.amazon.com/pt/api-gateway/
+https://docs.microsoft.com/pt-pt/aspnet/core/tutorials/signalr?WT.mc_id=dotnet-35129-website&view=aspnetcore-6.0&tabs=visual-studio
 https://github.com/senai-dev-1s2020
+https://docs.microsoft.com/pt-pt/aspnet/core/signalr/introduction?WT.mc_id=dotnet-35129-website&view=aspnetcore-6.0
+https://docs.microsoft.com/pt-br/aspnet/signalr/overview/getting-started/tutorial-getting-started-with-signalr
