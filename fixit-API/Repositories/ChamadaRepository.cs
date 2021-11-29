@@ -50,10 +50,43 @@ namespace fixit_API.Repositories
         public List<Chamada> ListarMinhas(int id)
         {
             return ctx.Chamadas
-           .Include(c => c.PrestadorFkNavigation).ThenInclude(c => c.UsuarioFk)
-           .Include(c => c.ColaboradorFkNavigation).ThenInclude(c => c.UsuarioFk)
-           .Where(p => p.ColaboradorFkNavigation.UsuarioFk == id && p.PrestadorFkNavigation.UsuarioFk)
-           .ToList();
+            .Include(c => c.StatusChamadaFkNavigation)
+            .Include(c => c.PrestadorFkNavigation).ThenInclude(c => c.UsuarioFk)
+            .Include(c => c.ColaboradorFkNavigation).ThenInclude(c => c.UsuarioFk)
+            
+            .Select(c => new Chamada()
+                {
+                    IdChamada = c.IdChamada,
+                    DataChamada = c.DataChamada,
+
+                    ColaboradorFkNavigation = new Colaborador
+                        {
+                            UsuarioFkNavigation = new Usuario
+                            {
+                                IdUsuario = c.ColaboradorFkNavigation.UsuarioFkNavigation.IdUsuario,
+                                Nome = c.ColaboradorFkNavigation.UsuarioFkNavigation.Nome
+                            },
+                        },
+
+                    PrestadorFkNavigation = new Prestador
+                        {
+                            UsuarioFkNavigation = new Usuario
+                            {
+                                IdUsuario = c.PrestadorFkNavigation.UsuarioFkNavigation.IdUsuario,
+                                Nome = c.PrestadorFkNavigation.UsuarioFkNavigation.Nome
+                            },
+                        },
+
+                    StatusChamadaFkNavigation = new Statuschamada
+                        {
+                            IdStatusChamada = c.StatusChamadaFkNavigation.IdStatusChamada,
+                            NomeStatusChamada = c.StatusChamadaFkNavigation.NomeStatusChamada
+                        }
+                })
+            
+            .Where(c => c.ColaboradorFkNavigation.UsuarioFk == id || c.PrestadorFkNavigation.UsuarioFk == id)
+            .Where(c => c.StatusChamadaFkNavigation.IdStatusChamada != 5)
+            .ToList();
         }
 
         fixit_dbContext ctx = new fixit_dbContext();

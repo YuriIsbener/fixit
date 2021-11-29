@@ -111,7 +111,7 @@ namespace fixit_API.Controlers
                 // Retorna a resposta da requisição 400 - Bad Request e o erro ocorrido
                 return BadRequest(new
                 {
-                    mensagem = "Não é possível mostrar as presenças se o usuário não estiver logado!",
+                    mensagem = "Não é possível mostrar as chamadas se o usuário não estiver logado!",
                     error
                 });
             }
