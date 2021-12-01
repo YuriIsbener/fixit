@@ -36,6 +36,8 @@ namespace fixit_API.Interfaces
         /// <param name="ChamadaAtualizada">Objeto com as novas informações</param>
         void Atualizar(int id, Chamada ChamadaAtualizada);
 
+        void AlterarStatus(int id, string status);
+
         /// <summary>
         /// Deleta uma chamada existente
         /// </summary>

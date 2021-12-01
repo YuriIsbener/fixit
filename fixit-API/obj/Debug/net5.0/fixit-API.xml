@@ -91,19 +91,6 @@
             </summary>
             <param name="id">ID da chamada que será deletado</param>
         </member>
-        <member name="M:fixit_API.Interfaces.IPrestadorRepository.ListarMinhas(System.Int32)">
-            <summary>
-            Lista todos os eventos que um determinado usuário participa
-            </summary>
-            <param name="id">ID do usuário que participa dos eventos listados</param>
-            <returns>Uma lista de presenças com os dados dos eventos</returns>
-        </member>
-        <member name="M:fixit_API.Interfaces.IPrestadorRepository.Inscrever(fixit_API.Domains.Prestador)">
-            <summary>
-            Cria uma nova presença
-            </summary>
-            <param name="inscricao">Objeto com as informações da inscrição</param>
-        </member>
         <member name="M:fixit_API.Interfaces.ISetorRepository.Listar">
             <summary>
             Lista todas as chamadas

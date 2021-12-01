@@ -59,9 +59,3 @@ C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\bin\Debug\net5.0\MySql.Ent
 C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\bin\Debug\net5.0\fixit-API.xml
 C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\obj\Debug\net5.0\fixit-API.xml
 C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\bin\Debug\net5.0\libman.json
-C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\bin\Debug\net5.0\ClosedXML.dll
-C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\bin\Debug\net5.0\CsvHelper.dll
-C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\bin\Debug\net5.0\DocumentFormat.OpenXml.dll
-C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\bin\Debug\net5.0\ExcelNumberFormat.dll
-C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\bin\Debug\net5.0\System.IO.Packaging.dll
-C:\Users\46976480803\Documents\GitHub\fixit\fixit-API\obj\Debug\net5.0\fixit-API.csproj.CopyComplete

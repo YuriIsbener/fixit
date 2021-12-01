@@ -1,6 +1,7 @@
 ﻿using fixit_API.Domains;
 using fixit_API.Interfaces;
 using fixit_API.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -79,7 +80,7 @@ namespace fixit_API.Controlers
                 return BadRequest(ex);
             }
         }
-
+        
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -114,6 +115,24 @@ namespace fixit_API.Controlers
                     mensagem = "Não é possível mostrar as chamadas se o usuário não estiver logado!",
                     error
                 });
+            }
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult atualizar(int id, Chamada status)
+        {
+            try
+            {
+                // Faz a chamada para o método
+                _chamadaRepository.AlterarStatus(id, status.StatusChamadaFkNavigation.NomeStatusChamada);
+
+                // Retora a resposta da requisição 204 - No Content
+                return StatusCode(204);
+            }
+            catch (Exception error)
+            {
+                // Retorna a resposta da requisição 400 - Bad Request e o erro ocorrido
+                return BadRequest(error);
             }
         }
     }
