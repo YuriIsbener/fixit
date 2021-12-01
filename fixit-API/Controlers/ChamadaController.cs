@@ -67,7 +67,7 @@ namespace fixit_API.Controlers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, Chamada chamadaAtualizada) 
+        public IActionResult Atualizar(int id, Chamada chamadaAtualizada) 
         {
             try
             {
@@ -119,7 +119,7 @@ namespace fixit_API.Controlers
         }
 
         [HttpPut("{id}")]
-        public IActionResult atualizar(int id, Chamada status)
+        public IActionResult Put(int id, Chamada status)
         {
             try
             {
