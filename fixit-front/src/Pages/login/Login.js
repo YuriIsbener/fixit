@@ -1,6 +1,6 @@
 import './Login.css';
 
-import { Component } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 
 class Login extends Component{
@@ -8,14 +8,36 @@ class Login extends Component{
     super(props);
     this.state = {
       email : '',
-      senha : ''
+      senha : '',
+      errorMensagem : '',
+      isLoading : false
     }
   }
 
-  efetuaLogin (event) => {
+  efetuaLogin = (event) => {
       event.preventDefault();
 
-      axios.post('http://localhost:5000')
+      this.setState({ erroMensagem : '', isLoading : true })
+
+      axios.post('http://localhost:5000/api/Login', {
+        email : this.state.email,
+        senha : this.state.senha
+      })
+
+      .then(resposta => {
+        if (resposta.status === 200){
+          localStorage.setItem('token-usuario', resposta.data.token)
+          this.setState({ isLoading : false })
+        }
+      })
+
+      .catch(() => {
+        this.setState({ erroMensagem : 'E-mail ou senha inválidos! Tente novamente.', isLoading : false })
+      })
+  }
+
+  atualizaStateCampo = (event) => {
+    this.setState({ [event.target.name] : event.target.value })
   }
 
   render(){
@@ -42,9 +64,21 @@ class Login extends Component{
                   placeholder="Senha"
                 />
 
-                <button type="submit">
-                  Login
-                </button>
+                <p>{this.state.errorMensagem}</p>
+
+                {
+                  this.state.isLoading === true &&
+                  <button type="submit" disabled>Loading...</button>
+                }
+                {
+                  this.state.isLoading === false &&
+                  <button 
+                    type="submit"
+                    disabled={ this.state.email === '' || this.state.senha === '' ? 'none' : ''}
+                  >
+                    Login
+                  </button>
+                }
               </form>
           </section>
         </main>

@@ -39,7 +39,7 @@ namespace fixit_API.Controlers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(int id) 
+        public IActionResult GetById(int id)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace fixit_API.Controlers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Atualizar(int id, Chamada chamadaAtualizada) 
+        public IActionResult Put(int id, Chamada chamadaAtualizada)
         {
             try
             {
@@ -80,7 +80,7 @@ namespace fixit_API.Controlers
                 return BadRequest(ex);
             }
         }
-        
+
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -118,22 +118,22 @@ namespace fixit_API.Controlers
             }
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Put(int id, Chamada status)
-        {
-            try
-            {
+        //[HttpPut("{id}")]
+        //public IActionResult Put(int id, Chamada status)
+        //{
+            //try
+            //{
                 // Faz a chamada para o método
-                _chamadaRepository.AlterarStatus(id, status.StatusChamadaFkNavigation.NomeStatusChamada);
+               // _chamadaRepository.AlterarStatus(id, status.StatusChamadaFkNavigation.NomeStatusChamada);
 
                 // Retora a resposta da requisição 204 - No Content
-                return StatusCode(204);
-            }
-            catch (Exception error)
-            {
+                //return StatusCode(204);
+           // }
+           // catch (Exception error)
+           // {
                 // Retorna a resposta da requisição 400 - Bad Request e o erro ocorrido
-                return BadRequest(error);
-            }
-        }
+               // return BadRequest(error);
+           // }
+       // }
     }
 }

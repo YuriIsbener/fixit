@@ -1,0 +1,164 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>fixit-API</name>
+    </assembly>
+    <members>
+        <member name="T:fixit_API.Controlers.LoginController">
+            <summary>
+            Controller responsável pelos endpoints referentes ao Login
+            </summary>
+        </member>
+        <member name="P:fixit_API.Controlers.LoginController._usuarioRepository">
+            <summary>
+            Cria um objeto _usuarioRepository que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:fixit_API.Controlers.LoginController.#ctor">
+            <summary>
+            Instancia este objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:fixit_API.Controlers.LoginController.Post(fixit_API.ViewModels.LoginViewModel)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="login">Objeto login que contém o e-mail e a senha do usuário</param>
+            <returns>Retorna um token com as informações do usuário</returns>
+            dominio/api/Login
+        </member>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.Listar">
+            <summary>
+            Lista todas as chamadas
+            </summary>
+            <returns>Uma lista de chamadas</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma chamada através do ID
+            </summary>
+            <param name="id">ID da chamada que será buscado</param>
+            <returns>A chamada buscada</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.Cadastrar(fixit_API.Domains.Chamada)">
+            <summary>
+            Cadastra uma nova chamada
+            </summary>
+            <param name="novaChamada">Objeto novoChamada que será cadastrado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.Atualizar(System.Int32,fixit_API.Domains.Chamada)">
+            <summary>
+            Atualiza uma chamada existente
+            </summary>
+            <param name="id"></param>
+            <param name="ChamadaAtualizada">Objeto com as novas informações</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IChamadaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma chamada existente
+            </summary>
+            <param name="id">ID da chamada que será deletado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.Listar">
+            <summary>
+            Lista todas os Materiais
+            </summary>
+            <returns>Uma lista de Materiais</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um Material através do ID
+            </summary>
+            <param name="id">ID do Material que será buscado</param>
+            <returns>O material buscada</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.Cadastrar(fixit_API.Domains.Material)">
+            <summary>
+            Cadastra um novo Material
+            </summary>
+            <param name="novoMaterial">Objeto novoChamada que será cadastrado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.Atualizar(System.Int32,fixit_API.Domains.Material)">
+            <summary>
+            Atualiza um Material existente
+            </summary>
+            <param name="id"></param>
+            <param name="materialAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IMaterialRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um material existente
+            </summary>
+            <param name="id">ID da chamada que será deletado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.ISetorRepository.Listar">
+            <summary>
+            Lista todas as chamadas
+            </summary>
+            <returns>Uma lista de chamadas</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.ISetorRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca uma chamada através do ID
+            </summary>
+            <param name="id">ID da chamada que será buscado</param>
+            <returns>A chamada buscada</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.ISetorRepository.Cadastrar(fixit_API.Domains.Setor)">
+            <summary>
+            Cadastra uma nova chamada
+            </summary>
+            <param name="novoSetor">Objeto novoChamada que será cadastrado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.ISetorRepository.Atualizar(System.Int32,fixit_API.Domains.Setor)">
+            <summary>
+            Atualiza uma chamada existente
+            </summary>
+            <param name="id"></param>
+            <param name="SetorAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.ISetorRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta uma chamada existente
+            </summary>
+            <param name="id">ID da chamada que será deletado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.Listar">
+            <summary>
+            Lista todas os Materiais
+            </summary>
+            <returns>Uma lista de Materiais</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um Material através do ID
+            </summary>
+            <param name="id">ID do Material que será buscado</param>
+            <returns>O material buscada</returns>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.Cadastrar(fixit_API.Domains.Usuario)">
+            <summary>
+            Cadastra um novo Material
+            </summary>
+            <param name="novoUsuario">Objeto novoChamada que será cadastrado</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.Atualizar(System.Int32,fixit_API.Domains.Usuario)">
+            <summary>
+            Atualiza um Material existente
+            </summary>
+            <param name="id"></param>
+            <param name="usuarioAtualizado">Objeto com as novas informações</param>
+        </member>
+        <member name="M:fixit_API.Interfaces.IUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um material existente
+            </summary>
+            <param name="id">ID da chamada que será deletado</param>
+        </member>
+        <member name="T:fixit_API.ViewModels.LoginViewModel">
+            <summary>
+            Classe responsável pelo modelo de Login
+            </summary>
+        </member>
+    </members>
+</doc>
