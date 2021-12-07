@@ -3125,19 +3125,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\46976480803\\.nuget\\packages\\": {}
+    "C:\\Users\\yuris\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\46976480803\\Documents\\GitHub\\fixit\\fixit-API\\fixit-API.csproj",
+      "projectUniqueName": "C:\\Users\\yuris\\Documents\\GitHub\\fixit\\fixit-API\\fixit-API.csproj",
       "projectName": "fixit-API",
-      "projectPath": "C:\\Users\\46976480803\\Documents\\GitHub\\fixit\\fixit-API\\fixit-API.csproj",
-      "packagesPath": "C:\\Users\\46976480803\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\46976480803\\Documents\\GitHub\\fixit\\fixit-API\\obj\\",
+      "projectPath": "C:\\Users\\yuris\\Documents\\GitHub\\fixit\\fixit-API\\fixit-API.csproj",
+      "packagesPath": "C:\\Users\\yuris\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yuris\\Documents\\GitHub\\fixit\\fixit-API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\46976480803\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\yuris\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3216,7 +3216,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
       }
     }
   }
