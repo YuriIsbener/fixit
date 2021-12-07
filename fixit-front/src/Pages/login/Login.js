@@ -45,6 +45,9 @@ class Login extends Component{
       <div>
         <main>
           <section>
+
+              <image src=""/>
+
               <p>Bem Vindo(a), <br/> a plataforma de suporte técnico do SENAI</p>
 
               <form onSubmit={this.efetuaLogin}>

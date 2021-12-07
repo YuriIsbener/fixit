@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { render } from 'react-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 import './index.css';
 
@@ -9,18 +9,19 @@ import Home from './Pages/home/Home'
 import Cadastro from './Pages/cadastro/Cadastro'
 import NotFound from './Pages/notFound/NotFound';
 
-const routing = (
-  <Router>
+render(
+  <BrowserRouter>
       <div>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/home" component={Home} />
-          <Route exact path="/cadastro" component={Cadastro} />
-          <Route exact path="/notfound" component={NotFound} />
-          <Redirect to= "/notfound"/>
-        </Switch>
+        <Routes>
+          <Route exact path='/' element={<Login/>} />
+          <Route exact path='/home' element={<Home/>} />
+          <Route exact path='/cadastro' element={<Cadastro/>} />
+          <Route exact path='/notfound'  element={<NotFound/>} />
+        </Routes>
       </div>
-  </Router>
+  </BrowserRouter>,
+
+  document.getElementById('root')
 )
 
-ReactDOM.render(routing ,document.getElementById('root'));
+

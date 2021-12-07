@@ -89,46 +89,46 @@ namespace fixit_API.Repositories
             .ToList();
         }
 
-        public void AlterarStatus(int id, string status)
-        {
+        //public void AlterarStatus(int id, string status)
+       //{
             // Busca a primeira presença para o ID informado e armazena no objeto presencaBuscada
-            Chamada chamadaBuscada = ctx.Chamadas
+           // Chamada chamadaBuscada = ctx.Chamadas
                 // Adiciona na busca as informações do usuário que participa do evento
-                .Include(p => p.PrestadorFkNavigation.UsuarioFkNavigation)
+                //.Include(p => p.PrestadorFkNavigation.UsuarioFkNavigation)
                 // Adiciona na busca as informações do evento que o usuário participa
-                .Include(p => p.IdChamada)
-                .FirstOrDefault(p => p.IdChamada == id);
+                //.Include(p => p.IdChamada)
+                //.FirstOrDefault(p => p.IdChamada == id);
 
             // Verifica qual o status foi informado
-            switch (status)
-            {
+           // switch (status)
+            //{
                 // Se for 1, a situação da presença será "Confirmada"
-                case "1":
-                    chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada = "Em Andamento";
-                    break;
+               // case "1":
+                   // chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada = "Em Andamento";
+                   // break;
 
                 // Se for 0, a situação da presença será "Recusada"
-                case "0":
-                    chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada = "Concluído";
-                    break;
+                //case "0":
+                    //chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada = "Concluído";
+                    //break;
 
                 // Se for 2, a situação da presença será "Não confirmada"
-                case "2":
-                    chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada = "Cancelado";
-                    break;
+                //case "2":
+                   // chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada = "Cancelado";
+                   // break;
 
                 // Se for qualquer valor diferente de 0, 1 e 2, a situação da presença não será alterada
-                default:
-                    chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada = chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada;
-                    break;
-            }
+               // default:
+                   // chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada = chamadaBuscada.StatusChamadaFkNavigation.NomeStatusChamada;
+                   // break;
+            //}
 
             // Atualiza os dados da presença que foi buscado
-            ctx.Chamadas.Update(chamadaBuscada);
+            //ctx.Chamadas.Update(chamadaBuscada);
 
             // Salva as informações para serem gravadas no banco
-            ctx.SaveChanges();
-        }
+           // ctx.SaveChanges();
+        //}
 
         fixit_dbContext ctx = new fixit_dbContext();
     }
