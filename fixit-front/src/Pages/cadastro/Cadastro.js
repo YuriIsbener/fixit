@@ -5,13 +5,38 @@ class Cadastro extends Component{
   constructor(props){
     super(props);
     this.state = {
+      nome : '',
       email : '',
       senha : '',
-      tipoUser : '',
+      tipoAcc : false,
+      tipoUser : false,
       errorMensagem : '',
       isLoading : false
     }
   }
+
+  efetuaCadastro = (event) => {
+    event.preventDefault();
+
+    this.setState({ erroMensagem : '', isLoading : true })
+
+    axios.post('http://localhost:5000/api/Usuario', {
+      nome : this.state.nome,
+      email : this.state.email,
+      senha : this.state.senha,
+      tipoUser : this.state.tipoUser
+    })
+
+    .then(resposta => {
+      if (resposta.status === 200){
+        this.setState({ isLoading : false })
+      }
+    })
+
+    .catch(() => {
+      this.setState({ erroMensagem : 'Informações inválidas! Tente novamente.', isLoading : false })
+    })
+}
 
   atualizaStateCampo = (event) => {
     this.setState({ [event.target.name] : event.target.value })
@@ -46,9 +71,17 @@ class Cadastro extends Component{
 
                 <p>{this.state.errorMensagem}</p>
 
+                
                 <input
                   type="checkbox"
                   name="Prestador"
+                  checked={this.state.tipoUser}
+                  onChange={this.AtualizaStateCampo}
+                />
+
+                <input
+                  type="checkbox"
+                  name="Colaborador"
                   checked={this.state.tipoUser}
                   onChange={this.AtualizaStateCampo}
                 />

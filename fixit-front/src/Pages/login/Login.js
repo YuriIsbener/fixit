@@ -55,7 +55,7 @@ class Login extends Component{
                   type="text"
                   name="email"
                   value={this.state.email}
-                  onChange={this.AtualizaStateCampo}
+                  onChange={this.atualizaStateCampo}
                   placeholder="E-mail"
                 />
 
@@ -63,7 +63,7 @@ class Login extends Component{
                   type="password"
                   name="senha"
                   value={this.state.senha}
-                  onChange={this.AtualizaStateCampo}
+                  onChange={this.atualizaStateCampo}
                   placeholder="Senha"
                 />
 
